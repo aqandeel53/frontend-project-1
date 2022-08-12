@@ -173,7 +173,7 @@
         }
     }
     
-    @media screen and (max-width: 950px) {
+    @media screen and (max-width: 1000px) {
         .very-small-screen {
             display: none;
         }
