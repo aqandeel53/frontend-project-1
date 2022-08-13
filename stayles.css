@@ -9,16 +9,20 @@
         list-style-type: none;
     }
     
-    form input {
-        width: 60%;
-        outline: none;
+    img {
+        width: 6rem;
+        margin: 0 auto;
     }
     
     form {
         margin-left: 1rem;
         width: 80%;
         text-align: left;
-        /* max-width: 86%; */
+    }
+    
+    #search_input {
+        width: 60%;
+        outline: none;
     }
     
     .clear {
@@ -44,10 +48,6 @@
         box-shadow: 3px 3px 6px 1px rgba(6, 3, 3, 0.2);
         justify-content: space-between;
         margin-bottom: 2px;
-    }
-    
-    img {
-        width: 6rem;
     }
     
     .header button {
