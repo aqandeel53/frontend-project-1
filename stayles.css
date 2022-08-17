@@ -34,6 +34,17 @@
         color: white;
     }
     
+    .cat-select {
+        color: #6a6f73;
+        margin-right: 12px;
+        min-width: fit-content;
+        padding: 0 0;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: -.02rem;
+        font-size: 1rem;
+    }
+    
     .header-search {
         width: 40%;
         border: black 1px solid;
@@ -154,6 +165,10 @@
     
     form {
         height: 1.5rem;
+    }
+    
+    .butt-active {
+        color: black;
     }
     
     @media screen and (max-width: 1300px) {

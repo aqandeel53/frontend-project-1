@@ -1,24 +1,53 @@
 'use strict';
 
-const data_link = 'http://localhost:3000/courses';
+const data_link = 'http://localhost:3000';
 const cources_container = document.querySelector('.main-body');
 
+const buttonss = {
+    "butt1": "python",
+    "butt2": "excel",
+    "butt3": "web",
+    "butt4": "js",
+    "butt5": "data",
+    "butt6": "aws",
+    "butt7": "draw"
+}
 
 
-
-function fetch_courses() {
+function fetch_courses(linkk) {
     return new Promise((resolve, reject) => {
-        fetch(data_link)
+        return fetch(linkk)
             .then((response) => response.json())
             .then((jsonData) => resolve(jsonData))
     });
 };
 
-fetch_courses().then(function(data) {
-    data.forEach((course) => generate_course_cards(course));
-});
+let fetched_courses = fetch_courses(`${data_link}/courses?name=python`);
 
+function resolve_data(f_data) {
+    Promise.resolve(f_data).then(function(data) {
+        generate_section_info(data[0]);
+        data = data[0]["courses"];
+        data.forEach((course) => generate_course_cards(course));
+    });
+}
+resolve_data(fetched_courses);
 
+function generate_section_info(section_data) {
+    console.log(section_data);
+    let section_name = section_data.name;
+    let section_header = section_data.header;
+    let section_description = section_data.description;
+
+    let page_header = document.querySelector('#s_title');
+    let page_description = document.querySelector('#s_discr');
+    let page_button = document.querySelector('#er');
+
+    page_header.innerHTML = section_header;
+    page_description.innerHTML = section_description;
+    page_button.innerHTML = 'Explore ' + section_name;
+
+}
 
 function generate_course_cards(course_data) {
     const course_img = course_data.image;
@@ -43,12 +72,13 @@ document.querySelector('#search-buttomn').addEventListener('click', function() {
 
 })
 
+
 function search() {
     const search_item = document.querySelector('#search_input').value;
     cources_container.innerHTML = '';
     document.querySelector('header').style.display = "none";
 
-    fetch_courses().then((data) => {
+    Promise.resolve(fetched_courses).then((data) => {
         console.log('errrrrrrrrrrrrrr');
         const filtered_data = filtering(data, search_item);
         console.log(filtered_data);
@@ -63,3 +93,24 @@ function filtering(data, item) {
         return course.title.toLowerCase().includes(item.toLowerCase());
     })
 }
+
+function set_black(butt) {
+    const old_button = document.querySelector('.butt-active');
+    const new_buttom = document.getElementById(butt);
+    old_button.classList.remove('butt-active')
+    new_buttom.classList.add('butt-active')
+}
+const buttons_sections = () => {
+    for (const btn_Id in buttonss) {
+        const btn = document.getElementById(btn_Id);
+        btn.addEventListener("click", function() {
+            cources_container.innerHTML = '';
+            fetched_courses = fetch_courses(`${data_link}/courses?name=${buttonss[btn_Id]}`);
+            resolve_data(fetched_courses);
+            set_black(btn_Id);
+        })
+    }
+}
+
+
+buttons_sections();
