@@ -27,11 +27,24 @@
     
     .clear {
         border: none;
+        margin-right: 10px;
+        margin-left: 10px;
     }
     
     .black {
         background-color: black;
         color: white;
+    }
+    
+    .cat-select {
+        color: #6a6f73;
+        margin-right: 12px;
+        min-width: fit-content;
+        padding: 0 0;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: -.02rem;
+        font-size: 1rem;
     }
     
     .header-search {
@@ -89,10 +102,36 @@
         display: flex;
         align-items: center;
         flex-wrap: wrap;
+        overflow: hidden;
         /*
   justify-content: flex-start;
 
 */
+    }
+    
+    #img2 {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        margin-right: 0px;
+        margin-left: 80px;
+    }
+    
+    .cat_card {
+        color: #1c1d1f;
+        padding: 0.8rem 0 1.6rem;
+        font-weight: 600;
+        font-size: 1.3rem;
+    }
+    
+    .cat_text {
+        margin: 0 0 2.4rem;
+        letter-spacing: -.02rem;
+        margin-left: 2.4rem;
+    }
+    
+    .grid-img {
+        height: 12rem;
+        width: 12rem;
     }
     
     .main-body img {
@@ -113,6 +152,9 @@
     h3 {
         margin: 0;
         padding: 0;
+        font-size: 18px;
+        font-family: "Times New Roman", Times, serif;
+        font-weight: bold;
     }
     
     h4 {
@@ -123,9 +165,14 @@
     h5 {
         margin: 0;
         padding: 0;
+        font-size: 14px;
     }
     
     a h3 {
+        max-width: 16rem;
+    }
+    
+    div h3 {
         max-width: 16rem;
     }
     
@@ -154,6 +201,10 @@
     
     form {
         height: 1.5rem;
+    }
+    
+    .butt-active {
+        color: black;
     }
     
     @media screen and (max-width: 1300px) {

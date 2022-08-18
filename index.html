@@ -2,10 +2,12 @@
 <html>
 
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="stayles.css" />
     <title>Online Courses - Learn Anything, On Your Schedule | Udemy</title>
     <link type="image/x-icon" rel="icon" href="https://logos-world.net/wp-content/uploads/2021/11/Udemy-Emblem.png" />
     <script src="https://kit.fontawesome.com/59036b5944.js" crossorigin="anonymous"></script>
+
 
 </head>
 
@@ -14,7 +16,10 @@
     <nav class="header">
         <button class="clear no-butt"> <i class="fa-solid fa-bars fa-2xl" ></i></button>
 
-        <img src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" alt="header-logo" />
+        <img id="img2" src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" alt="header-logo" style=" margin-top: 100px;
+        margin-bottom: 100px;
+        margin-right: 150px;
+        margin-left: 80px;" />
 
         <button type="button" class="clear small-screen">Catorgries</button>
 
@@ -50,18 +55,57 @@
     <section>
         <h1>A broad selection of courses</h1>
         <p>Choose from 200,000 online video courseswith new additions published every month</p>
-        <h2 class="centr">Expand your career opportunities with Python</h2>
-        <p class="centr">
-            Take one of Udemy’s range of Python courses and learn how to code using this incredibly useful language. Its simple syntax and readability makes Python perfect for Flask, Django, data science, and machine learning. You’ll learn how to build everything
-            from games to sites to apps.
+        <div>
+
+            <button id="butt1" class="clear cat-select butt-active"><span>Python</span></button>
+            <button id="butt2" class="clear cat-select"><span>Excel</span></button>
+            <button id="butt3" class="clear cat-select"><span>Web Development</span></button>
+            <button id="butt4" class="clear cat-select"><span>Javascript</span></button>
+            <button id="butt5" class="clear cat-select"><span>Data Science</span></button>
+            <button id="butt6" class="clear cat-select"><span>AWS Certification</span></button>
+            <button id="butt7" class="clear cat-select"><span>Drawing</span></button>
+        </div>
+        <h2 class="centr" id="s_title"></h2>
+        <p class="centr" id="s_discr">
         </p>
-        <button type="button" id="er" class="but centr">Explore Python</button>
+        <button type="button" id="er" class="but centr"></button>
 
-        <div class="centr main-body">
+        <!--<div class="centr main-body">
 
+        </div>-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner centr main-body">
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    </section>
+
+    <section>
+        <h2 class="cat_text">Top categories</h2>
+        <div class="cat_container">
+            <div class="row justify-content-center justify-content-md-start" id="cat_photo_container">
+
+
+            </div>
         </div>
     </section>
     <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>
