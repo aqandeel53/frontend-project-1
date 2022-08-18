@@ -23,12 +23,14 @@ function fetch_courses(linkk) {
 };
 
 let fetched_courses = fetch_courses(`${data_link}/courses?name=python`);
+let u = '';
 
 function resolve_data(f_data) {
     Promise.resolve(f_data).then(function(data) {
         generate_section_info(data[0]);
         data = data[0]["courses"];
-        data.forEach((course) => generate_course_cards(course));
+        u = "active";
+        data.forEach((course) => generate_course_cards(course, u));
     });
 }
 resolve_data(fetched_courses);
@@ -54,15 +56,19 @@ function generate_course_cards(course_data) {
     const course_title = course_data.title;
     const course_aurthor = course_data.author;
     const course_price = course_data.price;
-
+    console.log(u);
     const html = `
-    <a >
+    <div class="carousel-item ${u}">
+    <a>
     <img src=${course_img}>
     <h3 class="blacklink">${course_title}</h3>
     <h5 class="garylink">${course_aurthor}</h5>
     <h3 class="blacklink">${course_price}</h3>
-    </a>`;
+    </a>
+    </div>`;
     cources_container.insertAdjacentHTML('beforeend', html);
+    u = '';
+    console.log(u);
 
 }
 
@@ -83,6 +89,7 @@ function search() {
         console.log(data);
         const filtered_data = filtering(data, search_item);
         console.log(filtered_data);
+        u = "active";
         filtered_data.forEach((course) => generate_course_cards(course));
 
     });

@@ -27,6 +27,8 @@
     
     .clear {
         border: none;
+        margin-right: 10px;
+        margin-left: 10px;
     }
     
     .black {
@@ -107,6 +109,13 @@
 */
     }
     
+    #img2 {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        margin-right: 0px;
+        margin-left: 80px;
+    }
+    
     .cat_card {
         color: #1c1d1f;
         padding: 0.8rem 0 1.6rem;
@@ -160,6 +169,10 @@
     }
     
     a h3 {
+        max-width: 16rem;
+    }
+    
+    div h3 {
         max-width: 16rem;
     }
     
