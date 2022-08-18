@@ -34,7 +34,7 @@ function resolve_data(f_data) {
 resolve_data(fetched_courses);
 
 function generate_section_info(section_data) {
-    console.log(section_data);
+    //  console.log(section_data);
     let section_name = section_data.name;
     let section_header = section_data.header;
     let section_description = section_data.description;
@@ -77,9 +77,10 @@ function search() {
     const search_item = document.querySelector('#search_input').value;
     cources_container.innerHTML = '';
     document.querySelector('header').style.display = "none";
-
+    console.log(fetched_courses);
     Promise.resolve(fetched_courses).then((data) => {
-        console.log('errrrrrrrrrrrrrr');
+        data = data[0]["courses"];
+        console.log(data);
         const filtered_data = filtering(data, search_item);
         console.log(filtered_data);
         filtered_data.forEach((course) => generate_course_cards(course));
@@ -111,6 +112,28 @@ const buttons_sections = () => {
         })
     }
 }
+const cat_card_generator = ({ image, title }) => {
+    const html = `
+    <div class="col-lg-3 col-md-4 col-xs-12 justify-content-center d-flex">
+                <a >
+                    <div ><img  class="grid-img" src="${image}"></div>
+                    <div class="cat_card"> <span>${title}</span> </div>
+                </a>
+            </div>
+            `
+    return html;
+}
 
-
+const view_cat = async() => {
+    const cat_container = document.getElementById("cat_photo_container");
+    const cats_data = await fetch(`${data_link}/categories`)
+        .then(x => x.json());
+    cats_data.forEach(
+        element => {
+            cat_container.appendChild(new DOMParser().parseFromString(cat_card_generator(element), "text/html")
+                .body
+                .firstElementChild)
+        });
+}
+view_cat();
 buttons_sections();

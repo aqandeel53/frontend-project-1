@@ -100,10 +100,29 @@
         display: flex;
         align-items: center;
         flex-wrap: wrap;
+        overflow: hidden;
         /*
   justify-content: flex-start;
 
 */
+    }
+    
+    .cat_card {
+        color: #1c1d1f;
+        padding: 0.8rem 0 1.6rem;
+        font-weight: 600;
+        font-size: 1.3rem;
+    }
+    
+    .cat_text {
+        margin: 0 0 2.4rem;
+        letter-spacing: -.02rem;
+        margin-left: 2.4rem;
+    }
+    
+    .grid-img {
+        height: 12rem;
+        width: 12rem;
     }
     
     .main-body img {
@@ -124,6 +143,9 @@
     h3 {
         margin: 0;
         padding: 0;
+        font-size: 18px;
+        font-family: "Times New Roman", Times, serif;
+        font-weight: bold;
     }
     
     h4 {
@@ -134,6 +156,7 @@
     h5 {
         margin: 0;
         padding: 0;
+        font-size: 14px;
     }
     
     a h3 {
